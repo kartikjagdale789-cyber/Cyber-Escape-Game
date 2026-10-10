@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Cyber Escape - digital survival begins here."
+    >
+    <meta name="theme-color" content="#070b12">
+    <title>Cyber Escape | Digital Survival</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/game.css">
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <main class="app">
+      <div class="ambient ambient--one" aria-hidden="true"></div>
+      <div class="ambient ambient--two" aria-hidden="true"></div>
+
+      <div class="system-bar" aria-label="System status">
+        <span class="system-bar__brand"><span class="status-dot"></span> NEXUS SECURITY NETWORK</span>
+        <span class="system-bar__status">SYSTEM STATUS: <strong>UNSTABLE</strong></span>
+      </div>
+
+      <section class="screen-stage" aria-label="Cyber Escape screens">
+        <section
+          id="menu-screen"
+          class="screen menu-screen is-active"
+          aria-labelledby="game-title"
+        >
+          <div class="menu-screen__content">
+            <p class="eyebrow"><span class="eyebrow__line"></span> INTRUSION DETECTED</p>
+            <div class="title-lockup">
+              <span class="title-lockup__index">CE // 01</span>
+              <h1 id="game-title">CYBER <span>ESCAPE</span></h1>
+              <p class="title-lockup__subtitle">DIGITAL SURVIVAL</p>
+            </div>
+            <p class="menu-screen__intro">
+              The network is compromised. Find your way out before the system
+              goes dark.
+            </p>
+            <nav class="menu-actions" aria-label="Main menu">
+              <button class="action-button action-button--primary" id="play-button" type="button">
+                <span>PLAY GAME</span><span class="action-button__arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="action-button" type="button" data-screen-target="how-screen">
+                <span>HOW TO PLAY</span><span class="action-button__arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="action-button" type="button" data-screen-target="settings-screen">
+                <span>SETTINGS</span><span class="action-button__arrow" aria-hidden="true">↗</span>
+              </button>
+            </nav>
+            <p class="menu-screen__footnote">A SIGNAL IS WAITING FOR YOU<span class="blink">_</span></p>
+          </div>
+          <div class="menu-screen__decoration" aria-hidden="true">
+            <div class="target-ring"><span></span></div>
+            <span class="decoration-label">NODE_07<br>OFFLINE</span>
+            <span class="decoration-cross decoration-cross--top">+</span>
+            <span class="decoration-cross decoration-cross--bottom">+</span>
+          </div>
+        </section>
+
+        <section
+          id="how-screen"
+          class="screen info-screen"
+          aria-labelledby="how-title"
+          aria-hidden="true"
+          inert
+        >
+          <div class="panel">
+            <p class="eyebrow"><span class="eyebrow__line"></span> FIELD GUIDE // 01</p>
+            <h2 id="how-title">HOW TO <span>PLAY</span></h2>
+            <p class="panel__intro">Your escape protocol. Memorize it. Move fast.</p>
+            <ul class="instruction-list">
+              <li>
+                <span class="instruction-list__icon">01</span>
+                <span><strong>WASD / ARROW KEYS</strong><small>Move through the network</small></span>
+                <kbd>MOVE</kbd>
+              </li>
+              <li>
+                <span class="instruction-list__icon">02</span>
+                <span><strong>P</strong><small>Pause the system</small></span>
+                <kbd>PAUSE</kbd>
+              </li>
+              <li>
+                <span class="instruction-list__icon">03</span>
+                <span><strong>Collect Data Chips</strong><small>Gather valuable network data</small></span>
+                <kbd>+ SCORE</kbd>
+              </li>
+              <li>
+                <span class="instruction-list__icon">04</span>
+                <span><strong>Find Security Key</strong><small>Unlock the way out</small></span>
+                <kbd>REQUIRED</kbd>
+              </li>
+              <li>
+                <span class="instruction-list__icon">05</span>
+                <span><strong>Avoid Virus Bots</strong><small>Stay clear of infected programs</small></span>
+                <kbd>DANGER</kbd>
+              </li>
+              <li>
+                <span class="instruction-list__icon">06</span>
+                <span><strong>Reach the Exit</strong><small>Get to the unlocked gateway</small></span>
+                <kbd>ESCAPE</kbd>
+              </li>
+              <li>
+                <span class="instruction-list__icon">07</span>
+                <span><strong>Escape before time runs out</strong><small>The system will not wait</small></span>
+                <kbd>HURRY</kbd>
+              </li>
+            </ul>
+            <button class="action-button action-button--primary panel__back" type="button" data-screen-target="menu-screen">
+              <span>BACK TO MENU</span><span class="action-button__arrow" aria-hidden="true">↙</span>
+            </button>
+          </div>
+        </section>
+
+        <section
+          id="settings-screen"
+          class="screen info-screen"
+          aria-labelledby="settings-title"
+          aria-hidden="true"
+          inert
+        >
+          <div class="panel panel--settings">
+            <p class="eyebrow"><span class="eyebrow__line"></span> SYSTEM CONFIGURATION</p>
+            <h2 id="settings-title">SETTINGS</h2>
+            <p class="panel__intro">Tune your connection before deployment.</p>
+            <div class="setting-row">
+              <div>
+                <strong>SOUND</strong>
+                <p>Toggle game audio</p>
+              </div>
+              <button
+                id="sound-toggle"
+                class="toggle-button"
+                type="button"
+                aria-pressed="true"
+                aria-label="Sound is on"
+              >
+                <span class="toggle-button__track"><span class="toggle-button__thumb"></span></span>
+                <span class="toggle-button__label">ON</span>
+              </button>
+            </div>
+            <button class="action-button action-button--primary panel__back" type="button" data-screen-target="menu-screen">
+              <span>BACK</span><span class="action-button__arrow" aria-hidden="true">↙</span>
+            </button>
+          </div>
+        </section>
+
+        <section
+          id="game-screen"
+          class="screen game-screen"
+          aria-labelledby="hud-level"
+          aria-hidden="true"
+          inert
+        >
+          <header class="game-hud" aria-label="Game status HUD">
+            <div class="hud-group hud-group--left">
+              <div class="hud-item hud-item--level">
+                <span class="hud-label">LEVEL</span>
+                <span class="hud-value" id="hud-level">01</span>
+              </div>
+              <div class="hud-item hud-item--score">
+                <span class="hud-label">SCORE</span>
+                <span class="hud-value" id="hud-score">0000</span>
+              </div>
+              <div class="hud-item hud-item--data">
+                <span class="hud-label">DATA</span>
+                <span class="hud-value" id="hud-data">0/5</span>
+              </div>
+            </div>
+
+            <div class="hud-item hud-item--objective" aria-live="polite">
+              <span class="hud-label">OBJECTIVE:</span>
+              <span class="hud-value hud-objective" id="hud-objective">FIND SECURITY KEY</span>
+            </div>
+
+            <div class="hud-group hud-group--right">
+              <div class="hud-item hud-item--lives">
+                <span class="hud-label">LIVES</span>
+                <span class="hud-value hud-lives" id="hud-lives" aria-label="3 lives">❤️ ❤️ ❤️</span>
+              </div>
+              <div class="hud-item hud-item--time">
+                <span class="hud-label">TIME</span>
+                <span class="hud-value" id="hud-time">60</span>
+              </div>
+              <div class="hud-item hud-item--actions">
+                <button id="pause-button" class="hud-button" type="button" aria-label="Pause game">
+                  <span class="hud-button__icon" aria-hidden="true">⏸</span>
+                  <span class="hud-button__text">PAUSE</span>
+                </button>
+              </div>
+            </div>
+          </header>
+
+          <div class="game-viewport">
+            <canvas
+              id="game-canvas"
+              class="game__canvas"
+              width="800"
+              height="500"
+              aria-label="Cyber Escape gameplay arena"
+            >
+              Your browser does not support the HTML canvas element.
+            </canvas>
+
+            <div id="pause-overlay" class="pause-overlay is-hidden" aria-hidden="true">
+              <div class="pause-overlay__card">
+                <p class="pause-overlay__tag">// SYSTEM INTERRUPT</p>
+                <h3 class="pause-overlay__title">GAME PAUSED</h3>
+                <p class="pause-overlay__desc">Infiltration link suspended. Press <kbd>P</kbd> to resume.</p>
+                <div class="pause-overlay__actions">
+                  <button id="resume-button" class="action-button action-button--primary" type="button">
+                    <span>RESUME MISSION</span><span class="action-button__arrow" aria-hidden="true">▶</span>
+                  </button>
+                  <button id="pause-menu-button" class="action-button" type="button" data-screen-target="menu-screen">
+                    <span>MAIN MENU</span><span class="action-button__arrow" aria-hidden="true">↙</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div id="complete-overlay" class="complete-overlay is-hidden" aria-hidden="true">
+              <div class="complete-overlay__card">
+                <p class="complete-overlay__tag">// MISSION ACCOMPLISHED</p>
+                <h3 class="complete-overlay__title">SYSTEM BREACHED</h3>
+                <p class="complete-overlay__subtitle">LEVEL 01 COMPLETE</p>
+
+                <div class="complete-overlay__breakdown">
+                  <div class="complete-breakdown-row">
+                    <span class="complete-breakdown-label">DATA COLLECTED</span>
+                    <span class="complete-breakdown-value" id="complete-data">5/5</span>
+                  </div>
+                  <div class="complete-breakdown-row">
+                    <span class="complete-breakdown-label">BASE SCORE</span>
+                    <span class="complete-breakdown-value" id="complete-base-score">0050</span>
+                  </div>
+                  <div class="complete-breakdown-row">
+                    <span class="complete-breakdown-label">TIME BONUS</span>
+                    <span class="complete-breakdown-value complete-breakdown-value--bonus" id="complete-time-bonus">+0</span>
+                  </div>
+                  <div class="complete-breakdown-row complete-breakdown-row--total">
+                    <span class="complete-breakdown-label">TOTAL SCORE</span>
+                    <span class="complete-breakdown-value complete-breakdown-value--total" id="complete-total-score">
+                      <span id="complete-score">0050</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="complete-overlay__actions">
+                  <button id="next-level-button" class="action-button action-button--primary" type="button">
+                    <span>NEXT LEVEL</span><span class="action-button__arrow" aria-hidden="true">▶</span>
+                  </button>
+                  <button id="complete-menu-button" class="action-button" type="button" data-screen-target="menu-screen">
+                    <span>MAIN MENU</span><span class="action-button__arrow" aria-hidden="true">↙</span>
+                  </button>
+                </div>
+                <p id="next-level-hint" class="complete-overlay__hint is-hidden">// LEVEL 02 INITIALIZING... SYSTEM STANDBY</p>
+              </div>
+            </div>
+
+            <div id="game-over-overlay" class="game-over-overlay is-hidden" aria-hidden="true">
+              <div class="game-over-overlay__card">
+                <p class="game-over-overlay__tag">// INFILTRATION TERMINATED</p>
+                <h3 class="game-over-overlay__title">SYSTEM FAILURE</h3>
+                <p class="game-over-overlay__subtitle">GAME OVER</p>
+
+                <div class="game-over-overlay__stats">
+                  <div class="game-over-stat">
+                    <span class="game-over-stat__label">FINAL SCORE</span>
+                    <span class="game-over-stat__value" id="game-over-score">0000</span>
+                  </div>
+                </div>
+
+                <div class="game-over-overlay__actions">
+                  <button id="try-again-button" class="action-button action-button--primary action-button--danger" type="button">
+                    <span>TRY AGAIN</span><span class="action-button__arrow" aria-hidden="true">↺</span>
+                  </button>
+                  <button id="game-over-menu-button" class="action-button" type="button" data-screen-target="menu-screen">
+                    <span>MAIN MENU</span><span class="action-button__arrow" aria-hidden="true">↙</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="game-footer">
+            <div class="game-controls-hint">
+              <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / <kbd>ARROWS</kbd> Move</span>
+              <span class="game-controls-hint__separator">•</span>
+              <span><kbd>P</kbd> Pause</span>
+            </div>
+            <button class="action-button game-back-button" type="button" data-screen-target="menu-screen">
+              <span>BACK TO MENU</span><span class="action-button__arrow" aria-hidden="true">↙</span>
+            </button>
+          </footer>
+        </section>
+      </section>
+
+      <footer class="app-footer">
+        <span>CYBER ESCAPE <span class="app-footer__separator">/</span> DIGITAL SURVIVAL</span>
+        <span>SECURE YOUR SIGNAL <span class="status-dot"></span></span>
+      </footer>
+    </main>
+  </body>
+</html>

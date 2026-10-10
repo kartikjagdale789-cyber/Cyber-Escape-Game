@@ -1,0 +1,180 @@
+/* Shared typography, page layout, and atmospheric background. */
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #070b12;
+  color: #e8f3f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --color-bg: #070b12;
+  --color-panel: #0b121b;
+  --color-cyan: #52f5df;
+  --color-cyan-soft: rgba(82, 245, 223, 0.18);
+  --color-text: #e8f3f5;
+  --color-muted: #84949d;
+  --color-line: rgba(124, 165, 177, 0.2);
+  --font-mono: "Consolas", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse at 49% 48%, rgba(13, 41, 50, 0.36), transparent 52%),
+    var(--color-bg);
+  color: var(--color-text);
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 4px;
+}
+
+.app {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  width: min(100% - 64px, 1240px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px 0 20px;
+}
+
+.app::before {
+  position: fixed;
+  z-index: -2;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(91, 146, 157, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 146, 157, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  content: "";
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 80%, transparent);
+  pointer-events: none;
+}
+
+.ambient {
+  position: fixed;
+  z-index: -1;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(82, 245, 223, 0.07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ambient::before,
+.ambient::after {
+  position: absolute;
+  inset: 28px;
+  border: 1px solid rgba(82, 245, 223, 0.06);
+  border-radius: inherit;
+  content: "";
+}
+
+.ambient::after {
+  inset: 58px;
+}
+
+.ambient--one {
+  top: 15%;
+  right: -205px;
+}
+
+.ambient--two {
+  bottom: -225px;
+  left: -180px;
+  width: 420px;
+  height: 420px;
+}
+
+.system-bar,
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}
+
+.system-bar {
+  min-height: 24px;
+}
+
+.system-bar__brand,
+.system-bar__status,
+.app-footer > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.system-bar__status strong {
+  color: #ff6376;
+  font-weight: 500;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  box-shadow: 0 0 10px var(--color-cyan);
+}
+
+.app-footer {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.app-footer__separator {
+  color: var(--color-cyan);
+}
+
+@media (max-width: 600px) {
+  .app {
+    width: min(100% - 36px, 1240px);
+    padding-top: 19px;
+  }
+
+  .system-bar,
+  .app-footer {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+
+  .system-bar__brand,
+  .system-bar__status,
+  .app-footer > span {
+    gap: 6px;
+  }
+
+  .app-footer {
+    padding-top: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
